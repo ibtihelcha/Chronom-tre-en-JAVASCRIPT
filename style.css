@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Racing Sans One", cursive;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+.box {
+  background-color: black;
+  height: 200px;
+  width: 400px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.frame {
+  display: flex;
+  gap: 20px;
+}
+
+h3 {
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.hrs,
+.min,
+.sec,
+.ms,
+.colon {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+.colon {
+  width: 10px;
+  height: 50px;
+}
+.buttons {
+  margin-top: 25px;
+}
+.buttons button {
+  border: none;
+  padding: 5px 20px;
+  color: black;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.start,
+.stop,
+.reset {
+  background-color: white;
+}
+.start:hover,
+.stop:hover,
+.reset:hover {
+  background-color: aqua;
+}
+
+.start-active,
+.stop-active {
+  pointer-events: none;
+  opacity: 0.5;
+}
