@@ -1,79 +1,98 @@
-window.onload=function time (){
-var heure=document.getElementsByClassName("hrs")[0]
-var minute=document.getElementsByClassName("min")[0]
-var  seconde=document.getElementsByClassName("sec")[0]
-var  milliseconde=document.getElementsByClassName("ms")[0]
-var starte=document.getElementsByClassName('start')[0]
-var  resete=document.getElementsByClassName('reset')[0]
-var  stope=document.getElementsByClassName('stop')[0]
-var h=00;
-var m=00;
-var s=00;
-var ms=00;
+window.onload=function(){
+var h = 0;
+var m=0;
+var s=0;
+var ms=0;
+var heure = document.querySelector('.hrs');
+var minute = document.querySelector('.min');
+var seconde = document.querySelector('.sec');
+var milliseconde = document.querySelector('.ms');
+var starte=document.querySelector('.start') ;
+var resete=document.querySelector('.reset');
+var stope=document.querySelector('.stop');
+var Interval;
 
-var interval ;
-
-function startTimer(){
-    ms++;
-if (ms<=9){
-    milliseconde.innerHtml='0' + ms;
-    
-}
-if (ms > 9){
-    milliseconde.innerHtml=ms;
-}
-if (ms > 99){
-    s++;
-    seconde.innerHtml='0'+  s;
-    ms=0;
-    milliseconde.innerHtml='0'+ 0;
-}
-if ( s > 9){
-    seconde.innerHtml=s;
-
-}
-if (s > 59 ){
-    m++;
-    minute.innerHtml='0'+m;
-    s=0;
-    seconde.innerHtml='0'+0;
-}
-if (m > 9){
-    minute.innerHtml=m 
-}
-
-if (m > 59){
-    h++;
-    heure.innerHtml='0'+ h;
-    m=0;
-    minute.innerHtml='0'+ 0;
-}
-if (h>9){
-  heure.innerHtml=h;
-}
-if (h > 24){
-milliseconde.innerHTML="00";
-seconde.innerHTML="00";
-minute.innerHTML="00";
-heure.innerHTML="00";
-}
-
-}
 starte.onclick= function() {
-    clearInterval(interval);
-    interval=setInterval(startTimer ,10);
-}
+    clearInterval(Interval);
+    Interval=setInterval(time ,10);
+    ;}
+
 stope.onclick= function(){
-    clearInterval(interval)
-}
+    clearInterval(Interval)
+    }
+
 resete.onclick= function() {
-    clearInterval(interval)
-    ms="00"
-    s="00"
-    m="00"
-    h="00"
-    milliseconde.innerHtml=ms; 
-    seconde.innerHtml=s;
-    minute.innerHtml=m;
-    heure.innerHtml=h;}
-}
+    clearInterval(Interval)
+    ms=0;
+    s=0;
+    m=0;
+    h=0;
+    milliseconde.innerHTML="00"; 
+    seconde.innerHTML="00";
+    minute.innerHTML="00";
+    heure.innerHTML="00";}
+
+    function time(){
+        ms++;
+        if (ms<=9){
+            milliseconde.innerHTML='0' + ms;
+            
+        }
+        
+        if (ms > 9){
+            milliseconde.innerHTML=ms;
+        }
+        
+        if (ms > 99){
+            s++;
+            seconde.innerHTML='0'+  s;
+            ms=0;
+            milliseconde.innerHTML='0'+ 0;
+        }
+        
+        if ( s > 9){
+            seconde.innerHTML=s;
+        }
+        
+        if (s > 59 ){
+            m++;
+            minute.innerHTML="0"+m;
+            ms=0;
+            s=0;
+            milliseconde.innerHTML='0'+0;
+            seconde.innerHTML='0'+0;
+        }
+        
+        if (m > 9){
+            minute.innerHTML=m ;
+        }
+        
+        if (m > 59){
+            h++;
+            heure.innerHTML='0'+ h;
+            ms=0;
+            s=0;
+            m=0;
+            milliseconde.innerHTML='0'+0;
+            seconde.innerHTML='0'+0;
+            minute.innerHTML='0'+0;
+        }
+        
+        if (h>9){
+          heure.innerHTML=h;
+        }
+        
+        if (h > 24){
+            ms=0;
+            s=0;
+            m=0;
+            h=0;
+         milliseconde.innerHTML="00";
+         seconde.innerHtml="00";
+         minute.innerHTML="00";
+        heure.innerHTML="00";
+      
+        }
+   
+    };
+};
